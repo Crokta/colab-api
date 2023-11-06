@@ -1,5 +1,5 @@
 import { Field, ObjectType } from '@nestjs/graphql';
-import { Member } from './member.entity';
+import { Member } from '../../member/entities/member.entity';
 import { DirectMessage } from './direct-message.entity';
 
 @ObjectType()

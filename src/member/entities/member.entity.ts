@@ -1,10 +1,10 @@
 import { Field, ObjectType } from '@nestjs/graphql';
-import { Server } from './server.entity';
-import { Profile } from './profile.entity';
-import { MemberRole } from '../enums';
-import { Message } from './message.entity';
-import { DirectMessage } from './direct-message.entity';
-import { Conversation } from './conversation.entity';
+import { Server } from '../../server/entities/server.entity';
+import { Profile } from '../../profile/entities/profile.entity';
+import { Message } from '../../server/entities/message.entity';
+import { DirectMessage } from '../../server/entities/direct-message.entity';
+import { Conversation } from '../../server/entities/conversation.entity';
+import { MemberRole } from '../member.enum';
 
 @ObjectType()
 export class Member {

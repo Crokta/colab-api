@@ -1,7 +1,7 @@
 import { Field, ObjectType } from '@nestjs/graphql';
-import { Server } from './server.entity';
-import { Channel } from './channel.entity';
-import { Member } from './member.entity';
+import { Server } from '../../server/entities/server.entity';
+import { Channel } from '../../server/entities/channel.entity';
+import { Member } from '../../member/entities/member.entity';
 
 @ObjectType()
 export class Profile {

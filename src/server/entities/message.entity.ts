@@ -1,6 +1,6 @@
 import { Field, ObjectType } from '@nestjs/graphql';
 import { Channel } from './channel.entity';
-import { Member } from './member.entity';
+import { Member } from '../../member/entities/member.entity';
 
 @ObjectType()
 export class Message {

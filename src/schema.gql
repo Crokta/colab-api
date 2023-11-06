@@ -2,6 +2,124 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
+type Channel {
+  createdAt: String!
+  id: String!
+  messages: [Message]
+  name: String
+  profile: Profile
+  profileId: String
+  server: [Server]
+  serverId: String!
+  type: ChannelType!
+  updatedAt: String!
+}
+
+"""Defines the channel type"""
+enum ChannelType {
+  TEXT
+  VIDEO
+  VOICE
+}
+
+type Conversation {
+  createdAt: String!
+  deleted: Boolean!
+  directMessages: [DirectMessage]
+  id: String!
+  memberOne: Member
+  memberOneId: String!
+  memberTwo: Member
+  memberTwoId: String!
+  updatedAt: String!
+}
+
+input CreateProfileInput {
+  email: String!
+  imageUrl: String!
+  name: String!
+}
+
+type DirectMessage {
+  content: String!
+  conversation: Conversation
+  conversationId: String
+  createdAt: String!
+  deleted: Boolean!
+  fileUrl: String
+  id: String!
+  member: Member
+  memberId: String
+  updatedAt: String!
+}
+
+type Member {
+  conversationInitiated: [Conversation]
+  conversationReceived: [Conversation]
+  createdAt: String!
+  directMessages: [DirectMessage]
+  id: String!
+  messages: [Message]
+  profile: Profile
+  profileId: String!
+  role: MemberRole!
+  server: Server
+  serverId: String!
+  updatedAt: String!
+}
+
+"""Defines the member role"""
+enum MemberRole {
+  ADMIN
+  GUEST
+  MODERATOR
+}
+
+type Message {
+  channel: Channel
+  channelId: String
+  content: String!
+  createdAt: String!
+  deleted: Boolean!
+  fileUrl: String
+  id: String!
+  member: Member
+  memberId: String
+  updatedAt: String!
+}
+
+type Mutation {
+  createProfile(input: CreateProfileInput!): Profile!
+}
+
+type Profile {
+  channels: [Channel]
+  createdAt: String!
+  email: String!
+  id: String!
+  imageUrl: String
+  members: [Member]
+  name: String!
+  servers: [Server]
+  updatedAt: String!
+}
+
 type Query {
   hello: String!
+  profile(profileId: String!): Profile!
+  profileByEmail(email: String!): Profile!
+  profiles: [Profile!]!
+}
+
+type Server {
+  channels: [Channel]
+  createdAt: String!
+  id: String!
+  imageUrl: String
+  inviteCode: String!
+  members: [Member]
+  name: String!
+  profile: Profile
+  profileId: String!
+  updatedAt: String!
 }

@@ -1,6 +1,6 @@
 import { Field, ObjectType } from '@nestjs/graphql';
-import { ChannelType } from '../enums';
-import { Profile } from './profile.entity';
+import { ChannelType } from '../server.enum';
+import { Profile } from '../../profile/entities/profile.entity';
 import { Server } from './server.entity';
 import { Message } from './message.entity';
 

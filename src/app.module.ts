@@ -7,6 +7,8 @@ import { GraphQLModule } from '@nestjs/graphql';
 import { ApolloDriver } from '@nestjs/apollo';
 import { ServerModule } from './server/server.module';
 import { PrismaService } from './prisma/prisma.service';
+import { ProfileModule } from './profile/profile.module';
+import { MemberModule } from './member/member.module';
 
 @Module({
   imports: [
@@ -27,6 +29,8 @@ import { PrismaService } from './prisma/prisma.service';
       }),
     }),
     ServerModule,
+    ProfileModule,
+    MemberModule,
   ],
   controllers: [AppController],
   providers: [AppService, PrismaService],
