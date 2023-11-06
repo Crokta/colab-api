@@ -15,7 +15,7 @@ model Profile {
   name     String
   imageUrl String?
   email    String    @unique
-  server   Server[]
+  servers  Server[]
   members  Member[]
   channels Channel[]
 
@@ -48,7 +48,7 @@ model Member {
   messages              Message[]
   directMessages        DirectMessage[]
   ConversationInitiated Conversation[]  @relation("MemberOne")
-  ConversationRecieved  Conversation[]  @relation("MemberTwo")
+  ConversationReceived  Conversation[]  @relation("MemberTwo")
   role                  MemberRole      @default(GUEST)
   createdAt             DateTime        @default(now())
   updatedAt             DateTime        @updatedAt
@@ -77,9 +77,9 @@ model Message {
   content String
   fileUrl String?
 
-  Member    Member?  @relation(fields: [memberId], references: [id], onDelete: Cascade)
+  member    Member?  @relation(fields: [memberId], references: [id], onDelete: Cascade)
   memberId  String?
-  Channel   Channel? @relation(fields: [channelId], references: [id], onDelete: Cascade)
+  channel   Channel? @relation(fields: [channelId], references: [id], onDelete: Cascade)
   channelId String?
 
   deleted   Boolean  @default(false)
@@ -93,7 +93,7 @@ model DirectMessage {
   id             String       @id @default(cuid())
   content        String
   fileUrl        String?
-  Member         Member?      @relation(fields: [memberId], references: [id], onDelete: Cascade)
+  member         Member?      @relation(fields: [memberId], references: [id], onDelete: Cascade)
   memberId       String?
   conversationId String
   conversation   Conversation @relation(fields: [conversationId], references: [id], onDelete: Cascade)
