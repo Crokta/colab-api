@@ -10,7 +10,7 @@ import { GqlAuthGuard } from '../auth/auth.guard';
 export class ProfileResolver {
   constructor(private readonly profileService: ProfileService) {}
 
-  // @UseGuards(GqlAuthGuard)
+  @UseGuards(GqlAuthGuard)
   @Mutation(() => Profile, { name: 'createProfile' })
   async createProfile(@Args('input') input: CreateProfileInput) {
     return await this.profileService.createProfile(input);
