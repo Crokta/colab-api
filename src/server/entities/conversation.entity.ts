@@ -19,7 +19,7 @@ export class Conversation {
   @Field(() => Member, { nullable: true })
   memberTwo: Member;
 
-  @Field(() => [DirectMessage], { nullable: true })
+  @Field(() => [DirectMessage], { nullable: 'itemsAndList' })
   directMessages: DirectMessage[];
 
   @Field()

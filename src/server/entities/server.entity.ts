@@ -1,6 +1,7 @@
 import { Field, ObjectType } from '@nestjs/graphql';
 import { Channel } from './channel.entity';
 import { Profile } from './profile.entity';
+import { Member } from './member.entity';
 
 @ObjectType()
 export class Server {
@@ -22,8 +23,11 @@ export class Server {
   @Field(() => Profile, { nullable: true })
   profile: Profile;
 
-  @Field(() => [Channel], { nullable: true })
+  @Field(() => [Channel], { nullable: 'itemsAndList' })
   channels: Channel[];
+
+  @Field(() => [Member], { nullable: 'itemsAndList' })
+  members: Member[];
 
   @Field()
   createdAt: string;

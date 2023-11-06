@@ -15,7 +15,7 @@ export class Channel {
   @Field(() => ChannelType)
   type: ChannelType;
 
-  @Field(() => [Profile], { nullable: true })
+  @Field(() => Profile, { nullable: true })
   profile: Profile;
 
   @Field({ nullable: true })
@@ -24,10 +24,10 @@ export class Channel {
   @Field()
   serverId: string;
 
-  @Field(() => [Server], { nullable: true })
+  @Field(() => [Server], { nullable: 'itemsAndList' })
   server: Server;
 
-  @Field(() => [Message], { nullable: true })
+  @Field(() => [Message], { nullable: 'itemsAndList' })
   messages: Message[];
 
   @Field()

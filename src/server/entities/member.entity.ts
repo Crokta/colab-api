@@ -23,16 +23,16 @@ export class Member {
   @Field()
   serverId: string;
 
-  @Field(() => [Message], { nullable: true })
+  @Field(() => [Message], { nullable: 'itemsAndList' })
   messages: Message[];
 
-  @Field(() => [DirectMessage], { nullable: true })
+  @Field(() => [DirectMessage], { nullable: 'itemsAndList' })
   directMessages: DirectMessage[];
 
-  @Field(() => [Conversation], { nullable: true })
+  @Field(() => [Conversation], { nullable: 'itemsAndList' })
   conversationInitiated: Conversation[];
 
-  @Field(() => [Conversation], { nullable: true })
+  @Field(() => [Conversation], { nullable: 'itemsAndList' })
   conversationReceived: Conversation[];
 
   @Field(() => MemberRole)

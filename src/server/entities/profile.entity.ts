@@ -17,13 +17,13 @@ export class Profile {
   @Field()
   email: string;
 
-  @Field(() => [Server], { nullable: true })
+  @Field(() => [Server], { nullable: 'itemsAndList' })
   servers: Server[];
 
-  @Field(() => [Member], { nullable: true })
+  @Field(() => [Member], { nullable: 'itemsAndList' })
   members: Member[];
 
-  @Field(() => [Channel], { nullable: true })
+  @Field(() => [Channel], { nullable: 'itemsAndList' })
   channels: Channel[];
 
   @Field()
