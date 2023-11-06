@@ -11,7 +11,7 @@ export class Member {
   @Field()
   id: string;
 
-  @Field()
+  @Field(() => Profile, { nullable: true })
   profile: Profile;
 
   @Field()
@@ -30,10 +30,10 @@ export class Member {
   directMessages: DirectMessage[];
 
   @Field(() => [Conversation], { nullable: true })
-  ConversationInitiated: Conversation[];
+  conversationInitiated: Conversation[];
 
   @Field(() => [Conversation], { nullable: true })
-  ConversationReceived: Conversation[];
+  conversationReceived: Conversation[];
 
   @Field(() => MemberRole)
   role: MemberRole;

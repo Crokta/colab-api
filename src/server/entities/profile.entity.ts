@@ -11,7 +11,7 @@ export class Profile {
   @Field()
   name: string;
 
-  @Field()
+  @Field({ nullable: true })
   imageUrl: string;
 
   @Field()

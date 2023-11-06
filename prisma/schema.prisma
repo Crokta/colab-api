@@ -47,8 +47,8 @@ model Member {
   serverId              String
   messages              Message[]
   directMessages        DirectMessage[]
-  ConversationInitiated Conversation[]  @relation("MemberOne")
-  ConversationReceived  Conversation[]  @relation("MemberTwo")
+  conversationInitiated Conversation[]  @relation("MemberOne")
+  conversationReceived  Conversation[]  @relation("MemberTwo")
   role                  MemberRole      @default(GUEST)
   createdAt             DateTime        @default(now())
   updatedAt             DateTime        @updatedAt

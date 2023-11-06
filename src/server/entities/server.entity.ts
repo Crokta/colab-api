@@ -10,7 +10,7 @@ export class Server {
   @Field()
   name: string;
 
-  @Field()
+  @Field({ nullable: true })
   imageUrl: string;
 
   @Field()
@@ -19,11 +19,11 @@ export class Server {
   @Field()
   profileId: string;
 
-  @Field(() => [Channel], { nullable: true })
-  channels: Channel[];
-
   @Field(() => Profile, { nullable: true })
   profile: Profile;
+
+  @Field(() => [Channel], { nullable: true })
+  channels: Channel[];
 
   @Field()
   createdAt: string;
