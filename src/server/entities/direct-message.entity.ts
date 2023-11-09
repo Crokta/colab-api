@@ -1,10 +1,10 @@
-import { Field, ObjectType } from '@nestjs/graphql';
+import { Field, ID, ObjectType } from '@nestjs/graphql';
 import { Member } from '../../member/entities/member.entity';
 import { Conversation } from './conversation.entity';
 
 @ObjectType()
 export class DirectMessage {
-  @Field()
+  @Field(() => ID)
   id: string;
 
   @Field()

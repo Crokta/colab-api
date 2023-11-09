@@ -1,7 +1,6 @@
 import { Resolver, Query, Mutation, Args } from '@nestjs/graphql';
 import { ProfileService } from './profile.service';
 import { CreateProfileInput } from './dto/create-profile.input';
-import { UpdateProfileInput } from './dto/update-profile.input';
 import { Profile } from './entities/profile.entity';
 import { UseGuards } from '@nestjs/common';
 import { GqlAuthGuard } from '../auth/auth.guard';

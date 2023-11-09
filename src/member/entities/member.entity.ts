@@ -1,4 +1,4 @@
-import { Field, ObjectType } from '@nestjs/graphql';
+import { Field, ID, ObjectType } from '@nestjs/graphql';
 import { Server } from '../../server/entities/server.entity';
 import { Profile } from '../../profile/entities/profile.entity';
 import { Message } from '../../server/entities/message.entity';
@@ -8,7 +8,7 @@ import { MemberRole } from '../member.enum';
 
 @ObjectType()
 export class Member {
-  @Field()
+  @Field(() => ID)
   id: string;
 
   @Field(() => Profile, { nullable: true })

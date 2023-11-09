@@ -4,7 +4,7 @@
 
 type Channel {
   createdAt: String!
-  id: String!
+  id: ID!
   messages: [Message]
   name: String
   profile: Profile
@@ -26,7 +26,7 @@ type Conversation {
   createdAt: String!
   deleted: Boolean!
   directMessages: [DirectMessage]
-  id: String!
+  id: ID!
   memberOne: Member
   memberOneId: String!
   memberTwo: Member
@@ -47,7 +47,7 @@ type DirectMessage {
   createdAt: String!
   deleted: Boolean!
   fileUrl: String
-  id: String!
+  id: ID!
   member: Member
   memberId: String
   updatedAt: String!
@@ -58,7 +58,7 @@ type Member {
   conversationReceived: [Conversation]
   createdAt: String!
   directMessages: [DirectMessage]
-  id: String!
+  id: ID!
   messages: [Message]
   profile: Profile
   profileId: String!
@@ -82,7 +82,7 @@ type Message {
   createdAt: String!
   deleted: Boolean!
   fileUrl: String
-  id: String!
+  id: ID!
   member: Member
   memberId: String
   updatedAt: String!
@@ -96,7 +96,7 @@ type Profile {
   channels: [Channel]
   createdAt: String!
   email: String!
-  id: String!
+  id: ID!
   imageUrl: String
   members: [Member]
   name: String!
@@ -114,7 +114,7 @@ type Query {
 type Server {
   channels: [Channel]
   createdAt: String!
-  id: String!
+  id: ID!
   imageUrl: String
   inviteCode: String!
   members: [Member]

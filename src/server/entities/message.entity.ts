@@ -1,10 +1,10 @@
-import { Field, ObjectType } from '@nestjs/graphql';
+import { Field, ID, ObjectType } from '@nestjs/graphql';
 import { Channel } from './channel.entity';
 import { Member } from '../../member/entities/member.entity';
 
 @ObjectType()
 export class Message {
-  @Field()
+  @Field(() => ID)
   id: string;
 
   @Field()

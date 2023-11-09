@@ -1,4 +1,4 @@
-import { Field, ObjectType } from '@nestjs/graphql';
+import { Field, ID, ObjectType } from '@nestjs/graphql';
 import { ChannelType } from '../server.enum';
 import { Profile } from '../../profile/entities/profile.entity';
 import { Server } from './server.entity';
@@ -6,7 +6,7 @@ import { Message } from './message.entity';
 
 @ObjectType()
 export class Channel {
-  @Field()
+  @Field(() => ID)
   id: string;
 
   @Field({ nullable: true })

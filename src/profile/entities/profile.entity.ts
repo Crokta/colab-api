@@ -1,11 +1,11 @@
-import { Field, ObjectType } from '@nestjs/graphql';
+import { Field, ID, ObjectType } from '@nestjs/graphql';
 import { Server } from '../../server/entities/server.entity';
 import { Channel } from '../../server/entities/channel.entity';
 import { Member } from '../../member/entities/member.entity';
 
 @ObjectType()
 export class Profile {
-  @Field()
+  @Field(() => ID)
   id: string;
 
   @Field()
